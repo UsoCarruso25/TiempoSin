@@ -1,0 +1,16 @@
+{
+  "name": "¿Cuánto Tiempo Sin...?",
+  "short_name": "TiempoSin",
+  "description": "App para llevar control de hábitos y reflexiones diarias",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.freepik.com/512/10466/10466020.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
