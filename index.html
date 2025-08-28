@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¿Cuánto Tiempo Sin...?</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <!-- Manifest PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4f46e5">
+
+  <!-- Icono -->
+  <link rel="icon" href="https://cdn-icons-png.freepik.com/512/10466/10466020.png" />
+</head>
+<body>
+  <main class="container">
+    <h1 class="title">⏳ ¿Cuánto tiempo sin...?</h1>
+
+    <form id="addForm" class="form">
+      <input type="text" id="habitName" placeholder="Ej: Fumar, Dormir Tarde..." required autocomplete="off" />
+      <button type="submit" class="btn-primary">➕ Agregar</button>
+    </form>
+
+    <div id="habitList" class="habit-list"></div>
+
+    <section class="calendar-notes">
+      <h2 class="section-title">📅 Notas por Día</h2>
+      <label for="datePicker" class="label">Selecciona una fecha:</label>
+      <input type="date" id="datePicker" class="input-date" />
+
+      <label for="dailyNote" class="label">Nota para ese día:</label>
+      <textarea id="dailyNote" placeholder="Escribe tu reflexión para esta fecha..." class="textarea"></textarea>
+
+      <button id="saveNoteBtn" class="btn-secondary">💾 Guardar Nota</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Hecho con ❤️ para ayudarte a mejorar</p>
+  </footer>
+
+  <script src="app.js"></script>
+
+  <!-- Registro del Service Worker -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("./service-worker.js")
+          .then(() => console.log("✅ Service Worker registrado"))
+          .catch((err) => console.log("❌ Error SW:", err));
+      });
+    }
+  </script>
+</body>
+</html>
